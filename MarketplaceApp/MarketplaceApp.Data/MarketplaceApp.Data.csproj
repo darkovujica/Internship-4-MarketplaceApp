@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B68C9F0A-F055-4220-9A96-88F8AB05BF84}</ProjectGuid>
+    <ProjectGuid>{BD7F8526-DFC0-4CA5-9651-5B04B12D7C63}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MarketplaceApp</RootNamespace>
-    <AssemblyName>MarketplaceApp</AssemblyName>
+    <RootNamespace>MarketplaceApp.Data</RootNamespace>
+    <AssemblyName>MarketplaceApp.Data</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,11 +47,18 @@
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\Marketplace.cs" />
     <Compile Include="Classes\Seller.cs" />
+    <Compile Include="Classes\Transactions.cs" />
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Enums\FavoriteStatus.cs" />
+    <Compile Include="Enums\ItemCategory.cs" />
+    <Compile Include="Enums\SaleStatus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seed\Seed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B68C9F0A-F055-4220-9A96-88F8AB05BF84}</ProjectGuid>
+    <ProjectGuid>{532D92AA-FE9A-4039-89E5-D48EBE7E409F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MarketplaceApp</RootNamespace>
-    <AssemblyName>MarketplaceApp</AssemblyName>
+    <RootNamespace>MarketplaceApp.Presentation</RootNamespace>
+    <AssemblyName>MarketplaceApp.Presentation</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MarketplaceApp.Presentation.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,15 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Buyer.cs" />
-    <Compile Include="Classes\Item.cs" />
-    <Compile Include="Classes\Marketplace.cs" />
-    <Compile Include="Classes\Seller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarketplaceApp.Domain\MarketplaceApp.Domain.csproj">
+      <Project>{c32708f5-bbb1-42cc-acdf-7dc53c8d0ecf}</Project>
+      <Name>MarketplaceApp.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
