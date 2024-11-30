@@ -34,7 +34,7 @@ namespace MarketplaceApp.Domain.Repositories
             item.Status = SaleStatus.Sold;
             Buyer.Balance -= item.Price;
             Marketplace.Earnings += item.Price * Marketplace.TransactionFee;
-            item.Seller.Earnings += item.Price * (1 - Marketplace.TransactionFee);
+            ItemRepository.FindSeller(item).Earnings += item.Price * (1 - Marketplace.TransactionFee);
             return "Item is bought. ";
         }
         public string ReturnItem(int id)
@@ -46,7 +46,7 @@ namespace MarketplaceApp.Domain.Repositories
 
             item.Status = SaleStatus.ForSale;
             Buyer.Balance += item.Price * Marketplace.Refund;
-            item.Seller.Earnings -= item.Price * (1 - Marketplace.Refund - Marketplace.TransactionFee);
+            ItemRepository.FindSeller(item).Earnings -= item.Price * (1 - Marketplace.Refund - Marketplace.TransactionFee);
             return "Item refunded. ";
         }
         public string AddTofavorites(int id)

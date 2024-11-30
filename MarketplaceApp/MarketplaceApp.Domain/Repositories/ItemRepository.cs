@@ -64,5 +64,18 @@ namespace MarketplaceApp.Domain.Repositories
                     return ItemCategory.Unknown;
             }
         }
+        public static Seller FindSeller(Item item)
+        {
+            foreach(var user in Marketplace.Users)
+            {
+                if (!UserRepository.IsBuyer2(user))
+                {
+                    var seller = (Seller)user;
+                    if (seller.AllSellerItems.Contains(item))
+                        return seller;
+                }
+            }
+            return null;
+        }
     }
 }

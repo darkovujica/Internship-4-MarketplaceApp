@@ -11,13 +11,13 @@ namespace MarketplaceApp.Domain.Repositories
     {
         public static void AddNewBuyer(string name, string email, double balance)
         {
-            var buyer = new Buyer(name, email, balance);
+            var buyer = new Buyer(name, email, balance, new List<Item>(), new List<Item>());
             Marketplace.Users.Add(buyer);
             
         }
         public static void AddNewSeller(string name, string email)
         {
-            Marketplace.Users.Add(new Seller(name, email));
+            Marketplace.Users.Add(new Seller(name, email, 0.0, new List<Item>()));
         }
         public static bool EmailExists(string email)
         {
@@ -33,6 +33,12 @@ namespace MarketplaceApp.Domain.Repositories
             foreach (var user in Marketplace.Users)
                 if (user.Email == email && (Buyer)user != null)
                     return true;
+            return false;
+        }
+        public static bool IsBuyer2(User user)
+        {
+            if ((Buyer)user != null)
+                return true;
             return false;
         }
         public static User FindUser(string email)

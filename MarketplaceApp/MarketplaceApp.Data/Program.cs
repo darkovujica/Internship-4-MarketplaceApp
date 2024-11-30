@@ -10,6 +10,7 @@ namespace MarketplaceApp.Data
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }

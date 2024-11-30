@@ -21,7 +21,7 @@ namespace MarketplaceApp.Domain.Repositories
         public string AddItem(string name, string desctription, double price)
         {
             var id = ItemRepository.ItemCount++;
-            var item = new Item(name, desctription, price, Seller, id);
+            var item = new Item(id, name, desctription, price);
             Seller.AllSellerItems.Add(item);
             return "Item is added. ";
         }
